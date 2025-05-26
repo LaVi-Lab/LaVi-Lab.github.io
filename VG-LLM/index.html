@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Video-3D Geometry LLM: Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors">
+  <meta name="keywords" content="Spatial Reasoning, MLLM, 3D Scene Understanding">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video-3D Geometry LLM</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://arxiv.org/abs/2312.02010">
+            NaviLLM
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2412.00493">
+            Video-3D LLM
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/zd11024/">Duo Zheng</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://sega-hsj.github.io">Shijia Huang</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/lyy1994">Yanyang Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://lwwangcse.github.io/">Liwei Wang</a><sup>&dagger;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The Chinese University of Hong Kong</span><br>
+            <span class="author-block"><small><sup>*</sup> Equal Contribution&nbsp;</small></span>
+            <span class="author-block"><small><sup>&dagger;</sup> Corresponding Author</small></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://lavi-lab.github.io/VG-LLM/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://lavi-lab.github.io/VG-LLM/"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/LaVi-Lab/VG-LLM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" >
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3" style="margin-top: -1em">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Previous research has explored the use of Multimodal Large Language Models (MLLMs) for 3D scene understanding by treating scenes as videos. These methods typically rely on explicit dense 3D inputs, such as point clouds or reconstructed Bird's-Eye View (BEV) maps.
+          </p>
+          <p>
+            In this work, we take an innovative step forward by questioning whether we can improve MLLMs' 3D spatial understanding and reasoning capability by directly learning from videos with 3D vision geometry priors. We introduce a simple yet effective approach: the Video-3D Geometry LLM (VG LLM). Our method utilizes a 3D visual geometry encoder to extract 3D geometry prior information from the input video sequences. This information is integrated with visual tokens and fed into the MLLM. 
+          </p>
+          <p>
+            Our approach significantly boosts the 3D perception and reasoning capabilities of MLLMs, demonstrating notable improvements in various 3D scene understanding tasks and spatial reasoning benchmarks, all learned directly from videos. Remarkably, without relying on any explicit 3D data inputs, our 4B model achieves competitive performance with prior state-of-the-art methods, even outperforming the Gemini-1.5-Pro on the VSI-Bench. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" >
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3" style="margin-top: -1em"> Video-3D Geometry LLM </h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we propose Video-3D Geometry LLM (VG LLM), a novel framework designed to
+explicitly integrate 3D visual geometry priors into MLLMs. To achieve this, we introduce a 3D
+visual geometry encoder that enriches input visual sequences with additional geometric informa-
+tion. Specifically, input images are processed by both a conventional visual encoder and the newly
+integrated 3D visual geometry encoder. The features extracted by these encoders are fused at the
+patch level and subsequently passed to the MLLM backbone.
+          </p>
+        </div>
+        <img id="painting_icon" width="80%" src="static/images/model.png" alt="VG LLM">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -1em"> Visualization</h2>
+
+        <div class="mb-5">
+          <h3 class="title is-4 has-text-centered">Visualization of 3D Visual Grounding</h3>
+          <div class="content has-text-justified">
+          <p>
+Our method effectively handles spatial relationships between objects (e.g., away, opposite, next to), accurately identifying the corresponding frame
+index and generating the 3D-oriented bounding box.
+          </p>
+        </div>
+          <div class="carousel-container">
+            <div class="carousel-track-vg">
+              <img src="static/images/vg/example1.png" alt="3D Visual Grounding Image 1">
+              <img src="static/images/vg/example2.png" alt="3D Visual Grounding Image 2">
+              <img src="static/images/vg/example3.png" alt="3D Visual Grounding Image 3">
+              <img src="static/images/vg/example4.png" alt="3D Visual Grounding Image 4">
+            </div>
+            <button class="carousel-button prev-vg">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+            <button class="carousel-button next-vg">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="title is-4 has-text-centered">Visualization of 3D Video Object Detection</h3>
+          <div class="content has-text-justified">
+          <p>
+          From this figure, we observe that while the baseline performs decently in detecting objects in a given video, incorporating 3D geometry significantly improves both detection precision and recall. 
+          </p>
+        </div>
+          <div class="carousel-container">
+            <div class="carousel-track-vod">
+              <img src="static/images/det/example1.png" alt="3D Video Object Detection Image 1">
+              <img src="static/images/det/example2.png" alt="3D Video Object Detection Image 2">
+              <img src="static/images/det/example3.png" alt="3D Video Object Detection Image 3">
+              <img src="static/images/det/example4.png" alt="3D Video Object Detection Image 4">
+              <img src="static/images/det/example5.png" alt="3D Video Object Detection Image 5">
+              <img src="static/images/det/example6.png" alt="3D Video Object Detection Image 6">
+              <img src="static/images/det/example7.png" alt="3D Video Object Detection Image 7">
+              <img src="static/images/det/example8.png" alt="3D Video Object Detection Image 8">
+            </div>
+            <button class="carousel-button prev-vod">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
+            </button>
+            <button class="carousel-button next-vod">
+              <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </button>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track-vg,
+.carousel-track-vod {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-track-vg img,
+.carousel-track-vod img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 8px; /* 可选：给图片添加圆角 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7); /* 更柔和的半透明背景 */
+  border: none;
+  border-radius: 10px; /* 圆角矩形 */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-in-out; /* 添加 transform 过渡 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* 更明显的阴影 */
+  color: #333; /* 箭头颜色 */
+}
+
+.carousel-button:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-50%) scale(1.05); /* 鼠标悬停时略微放大 */
+}
+
+.carousel-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* 使用按钮的文本颜色 */
+}
+
+.prev-vg, .prev-vod {
+  left: 15px; /* 稍微调整位置 */
+}
+
+.next-vg, .next-vod {
+  right: 15px; /* 稍微调整位置 */
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  function createInfiniteCarousel(trackSelector, prevSelector, nextSelector) {
+    const track = document.querySelector(trackSelector);
+    const prevButton = document.querySelector(prevSelector);
+    const nextButton = document.querySelector(nextSelector);
+    const originalImages = Array.from(track.children);
+    let currentIndex = 0;
+    let images;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function cloneFirstAndLast() {
+      const firstClone = originalImages[0].cloneNode(true);
+      const lastClone = originalImages[originalImages.length - 1].cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, originalImages[0]);
+      images = Array.from(track.children);
+      // Adjust initial position to the first original image
+      currentIndex = 1;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    cloneFirstAndLast();
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex <= 0) {
+        track.style.transition = 'none';
+        currentIndex = images.length - 2;
+        updateCarousel();
+        track.offsetHeight; // Trigger reflow
+        track.style.transition = 'transform 0.3s ease-in-out';
+      }
+      currentIndex--;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex >= images.length - 1) {
+        track.style.transition = 'none';
+        currentIndex = 1;
+        updateCarousel();
+        track.offsetHeight; // Trigger reflow
+        track.style.transition = 'transform 0.3s ease-in-out';
+      }
+      currentIndex++;
+      updateCarousel();
+    });
+  }
+
+  createInfiniteCarousel('.carousel-track-vg', '.prev-vg', '.next-vg');
+  createInfiniteCarousel('.carousel-track-vod', '.prev-vod', '.next-vod');
+});
+</script>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+
+ <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This webpage template is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
