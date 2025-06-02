@@ -106,7 +106,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://lavi-lab.github.io/VG-LLM/"
+                <a href="https://arxiv.org/pdf/2505.24625"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -115,7 +115,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://lavi-lab.github.io/VG-LLM/"
+                <a href="https://arxiv.org/abs/2505.24625"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -134,7 +134,7 @@
                 </a>
               </span> -->
               <!-- Code Link. -->
-              <!-- <span class="link-block">
+              <span class="link-block">
                 <a href="https://github.com/LaVi-Lab/VG-LLM"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -142,7 +142,7 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span> -->
+              </span>
               <!-- Dataset Link. -->
               <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
@@ -168,13 +168,11 @@
         <h2 class="title is-3" style="margin-top: -1em">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Previous research has explored the use of Multimodal Large Language Models (MLLMs) for 3D scene understanding by treating scenes as videos. These methods typically rely on explicit dense 3D inputs, such as point clouds or reconstructed Bird's-Eye View (BEV) maps.
-          </p>
+            Previous research has investigated the application of Multimodal Large Language Models (MLLMs) in understanding 3D scenes by interpreting them as videos. These approaches generally depend on comprehensive 3D data inputs, such as point clouds or reconstructed Bird's-Eye View (BEV) maps.          </p>
           <p>
-            In this work, we take an innovative step forward by questioning whether we can improve MLLMs' 3D spatial understanding and reasoning capability by directly learning from videos with 3D vision geometry priors. We introduce a simple yet effective approach: the Video-3D Geometry LLM (VG LLM). Our method utilizes a 3D visual geometry encoder to extract 3D geometry prior information from the input video sequences. This information is integrated with visual tokens and fed into the MLLM. 
-          </p>
+            In our research, we advance this field by enhancing the capability of MLLMs to understand and reason in 3D spaces directly from video data, without the need for additional 3D input. We propose a novel and efficient method, the Video-3D Geometry Large Language Model (VG LLM). Our approach employs a 3D visual geometry encoder that extracts 3D prior information from video sequences. This information is integrated with visual tokens and fed into the MLLM.          </p>
           <p>
-            Our approach significantly boosts the 3D perception and reasoning capabilities of MLLMs, demonstrating notable improvements in various 3D scene understanding tasks and spatial reasoning benchmarks, all learned directly from videos. Remarkably, without relying on any explicit 3D data inputs, our 4B model achieves competitive performance with prior state-of-the-art methods, even outperforming the Gemini-1.5-Pro on the VSI-Bench. 
+            Extensive experiments have shown that our method has achieved substantial improvements in various tasks related to 3D scene understanding and spatial reasoning, all directly learned from video sources. Impressively, our 4B model, which does not rely on explicit 3D data inputs, achieves competitive results compared to existing state-of-the-art methods, and even surpasses the Gemini-1.5-Pro in the VSI-Bench evaluations.
           </p>
         </div>
       </div>
@@ -190,12 +188,7 @@
         <h2 class="title is-3" style="margin-top: -1em"> Video-3D Geometry LLM </h2>
         <div class="content has-text-justified">
           <p>
-            In this work, we propose Video-3D Geometry LLM (VG LLM), a novel framework designed to
-explicitly integrate 3D visual geometry priors into MLLMs. To achieve this, we introduce a 3D
-visual geometry encoder that enriches input visual sequences with additional geometric informa-
-tion. Specifically, input images are processed by both a conventional visual encoder and the newly
-integrated 3D visual geometry encoder. The features extracted by these encoders are fused at the
-patch level and subsequently passed to the MLLM backbone.
+            In this work, we propose Video-3D Geometry LLM (VG LLM), a novel framework designed to explicitly integrate 3D visual geometry priors into MLLMs. To achieve this, we introduce a 3D visual geometry encoder that enriches input visual sequences with additional geometric information. Specifically, input images are processed by both a conventional visual encoder and the newly integrated 3D visual geometry encoder. The features extracted by these encoders are fused at the patch level and subsequently passed to the MLLM backbone.
           </p>
         </div>
         <img id="painting_icon" width="80%" src="static/images/model.png" alt="VG LLM">
@@ -280,17 +273,17 @@ index and generating the 3D-oriented bounding box.
 .carousel-track-vod img {
   width: 100%;
   flex-shrink: 0;
-  border-radius: 8px; /* 可选：给图片添加圆角 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7); /* 更柔和的半透明背景 */
+  background: rgba(255, 255, 255, 0.7);
   border: none;
-  border-radius: 10px; /* 圆角矩形 */
+  border-radius: 10px;
   width: 40px;
   height: 40px;
   display: flex;
@@ -299,29 +292,29 @@ index and generating the 3D-oriented bounding box.
   font-size: 1em;
   cursor: pointer;
   opacity: 0.8;
-  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-in-out; /* 添加 transform 过渡 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* 更明显的阴影 */
-  color: #333; /* 箭头颜色 */
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  color: #333;
 }
 
 .carousel-button:hover {
   opacity: 1;
   background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-50%) scale(1.05); /* 鼠标悬停时略微放大 */
+  transform: translateY(-50%) scale(1.05);
 }
 
 .carousel-button svg {
   width: 20px;
   height: 20px;
-  fill: currentColor; /* 使用按钮的文本颜色 */
+  fill: currentColor;
 }
 
 .prev-vg, .prev-vod {
-  left: 15px; /* 稍微调整位置 */
+  left: 15px;
 }
 
 .next-vg, .next-vod {
-  right: 15px; /* 稍微调整位置 */
+  right: 15px;
 }
 </style>
 
@@ -382,17 +375,20 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@misc{zheng2025learningvideos3dworld,
+      title={Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors}, 
+      author={Duo Zheng and Shijia Huang and Yanyang Li and Liwei Wang},
+      year={2025},
+      eprint={2505.24625},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.24625}, 
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
  <footer class="footer">
