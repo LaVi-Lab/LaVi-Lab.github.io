@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="900px" viewBox="0 0 1920 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Background</title>
+    <defs>
+        <filter x="-58.4%" y="-31.6%" width="216.7%" height="163.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-58.4%" y="-31.6%" width="216.7%" height="163.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-50.8%" y="-37.3%" width="201.7%" height="174.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-60.2%" y="-37.3%" width="220.5%" height="174.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="50" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="页面-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页1" transform="translate(0.000000, -900.000000)">
+            <g id="Background" transform="translate(0.000000, 900.000000)">
+                <g id="编组-21" transform="translate(241.825110, 63.311229)" opacity="0.220221383">
+                    <ellipse id="椭圆形" fill="#FF621F" filter="url(#filter-1)" transform="translate(251.098768, 281.034264) rotate(-40.000000) translate(-251.098768, -281.034264) " cx="251.098768" cy="281.034264" rx="128.5" ry="237.5"></ellipse>
+                    <ellipse id="椭圆形" fill="#1FA8FF" filter="url(#filter-2)" transform="translate(379.098768, 230.034264) rotate(-60.000000) translate(-379.098768, -230.034264) " cx="379.098768" cy="230.034264" rx="128.5" ry="237.5"></ellipse>
+                    <ellipse id="椭圆形" fill="#FF621F" filter="url(#filter-3)" cx="1232.81105" cy="669.641811" rx="147.5" ry="201"></ellipse>
+                    <ellipse id="椭圆形" fill="#1FA8FF" filter="url(#filter-4)" transform="translate(1107.811045, 694.641811) scale(-1, 1) rotate(49.000000) translate(-1107.811045, -694.641811) " cx="1107.81105" cy="694.641811" rx="124.5" ry="201"></ellipse>
+                </g>
+                <g id="编组-12" transform="translate(1439.000000, 777.500000) scale(-1, 1) translate(-1439.000000, -777.500000) translate(1318.000000, 656.000000)" stroke="#FF8653">
+                    <ellipse id="椭圆形" cx="28.382716" cy="214.5" rx="27.882716" ry="28"></ellipse>
+                    <ellipse id="椭圆形" stroke-opacity="0.8" cx="44.8148148" cy="198" rx="44.3148148" ry="44.5"></ellipse>
+                    <ellipse id="椭圆形" stroke-opacity="0.6" cx="61.744856" cy="181" rx="61.244856" ry="61.5"></ellipse>
+                    <ellipse id="椭圆形" stroke-opacity="0.5" cx="81.6625514" cy="161" rx="81.1625514" ry="81.5"></ellipse>
+                    <ellipse id="椭圆形" stroke-opacity="0.3" cx="100.584362" cy="142" rx="100.084362" ry="100.5"></ellipse>
+                    <ellipse id="椭圆形" stroke-opacity="0.2" cx="121" cy="121.5" rx="120.5" ry="121"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
