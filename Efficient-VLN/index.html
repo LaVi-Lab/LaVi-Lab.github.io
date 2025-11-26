@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Efficient-VLN: A Training-Efficient Vision-Language Navigation Model">
+  <meta name="keywords" content="Vision-Language Navigation, MLLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Efficient-VLN</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://arxiv.org/abs/2312.02010">
+            NaviLLM
+          </a>
+          <a class="navbar-item" href="https://arxiv.org/abs/2412.00493">
+            Video-3D LLM
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Efficient-VLN: A Training-Efficient Vision-Language Navigation Model</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/zd11024/">Duo Zheng</a>,</span>
+            <span class="author-block">
+              <a href="https://sega-hsj.github.io">Shijia Huang</a>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=bojU9LoAAAAJ&hl=en">Yanyang Li</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://lwwangcse.github.io/">Liwei Wang</a><sup>&sharp;</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The Chinese University of Hong Kong</span><br>
+            <span class="author-block"><small><sup>&sharp;</sup> Corresponding Author</small></span>
+          </div>
+
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links"> -->
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2505.24625"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2505.24625"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/LaVi-Lab/VG-LLM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            <!-- </div>
+
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" >
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3" style="margin-top: -1em">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          Multimodal large language models (MLLMs) have shown promising potential in Vision-Language Navigation (VLN). However, their practical development is severely hindered by the substantial training overhead. 
+          We recognize two key issues that contribute to the overhead:
+          (1) the quadratic computational burden from processing long-horizon historical observations as massive sequences of tokens, and 
+          (2) the exploration-efficiency trade-off in DAgger, <i>i.e.</i>, a data aggregation process of collecting agent-explored trajectories.
+          While more exploration yields effective error-recovery trajectories for handling test-time distribution shifts, it comes at the cost of longer trajectory lengths for both training and inference.
+          </p>
+          <p>
+          To address these challenges, we propose <strong>Efficient-VLN</strong>, a training-efficient VLN model. Specifically, to mitigate the token processing burden, we design two efficient memory mechanisms: a progressive memory that dynamically allocates more tokens to recent observations, and a learnable recursive memory that utilizes the key-value cache of learnable tokens as the memory state. Moreover, we introduce a dynamic mixed policy to balance the exploration-efficiency trade-off.
+          </p>
+          <p>
+          Extensive experiments show that <strong>Efficient-VLN</strong> achieves state-of-the-art performance on R2R-CE (64.2% SR) and RxR-CE (67.0% SR). Critically, our model consumes merely 282 H800 GPU hours, demonstrating a dramatic reduction in training overhead compared to state-of-the-art methods.
+          </p>
+        </div>
+        <figure class="teaser-figure" style="margin: 1em 0;">
+          <!-- <figcaption class="has-text-centered" style="font-size:0.9rem; color:#666; margin-top:0.5em;">This figure compares the Success Rate (SR) on the R2R-CE benchmark (y-axis) against training overhead in GPU hours (x-axis, log scale).</figcaption> -->
+          <img id="painting_icon" style="width:50%; max-width:100%; height:auto;" src="static/images/teaser.png" alt="This figure compares the Success Rate (SR) on the R2R-CE benchmark (y-axis) against training overhead in GPU hours (x-axis, log scale).">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -1em"> Efficient-VLN </h2>
+
+        <div class="mb-5">
+          <h3 class="title is-4 has-text-centered">Efficient Memory Representation</h3>
+            <div class="content has-text-justified">
+              To tackle the computational overhead of processing massive memory tokens, we introduce two novel efficient memory representations.
+              <ol>
+              <li>A progressive memory representation is constructed via a progressive spatial compression, which is inspired by the human forgetting mechanism (<i>i.e.</i>, diminishing of memories over time).
+              Specifically, it applies a low compression ratio to visual tokens from recent frames, while gradually increasing this ratio for temporally distant ones.
+              </li>
+              <li>
+              A learnable recursive memory utilizes the KV cache of a set of learnable tokens to serve as the memory state.
+              By propagating the memory state across consecutive steps, the memory is recursively updated while maintaining a fixed size.
+              </li>
+              </ol>
+            </div>
+        </div>
+
+        <div>
+          <h3 class="title is-4 has-text-centered">DAgger with Dynamic Mixed Policy</h3>
+          <div class="content has-text-justified">
+              We introduce a dynamic mixed policy to better balance the exploration-efficiency trade-off in DAgger.
+              Specifically, this policy starts with the learned policy for accumulating the compounding errors, and then progressively shifts towards the oracle policy to ensure eventual task completion. 
+              This design enables the collection of error-recovery data without incurring excessively long trajectories, thus accelerating the training process.
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px;">
+            
+            <figure style="width: 45%; margin: 30px; text-align: center;">
+                <img src="static/images/model.png" alt="左图" style="width: 100%; height: auto;">
+                <figcaption style="margin-top: 8px; color: #555;">The architectures for progressive memory representation and recursive memory representation. </figcaption>
+            </figure>
+
+            <figure style="width: 35%; margin: 10px; text-align: center;">
+                <img src="static/images/dagger.png" alt="右图" style="width: 100%; height: auto;">
+                <figcaption style="margin-top: 8px; color: #555;">DAgger with Dynamic Mixed Policy</figcaption>
+            </figure>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -1em"> Main Results </h2>
+        <div class="content has-text-justified">
+          The proposed model achieves state-of-the-art performance with a 64.2% SR on R2R-CE and 67.0% SR on RxR-CE, while consuming merely 282 H800 GPU hours, which is far less than competing methods 
+          <figure class="teaser-figure" style="margin: 1em auto; text-align: center;">
+            <img id="painting_icon" style="width:80%; max-width:100%; height:auto;" src="static/images/results.png" alt="">
+            <figcaption style="margin-top: 8px; color: #555;">Comparison with state-of-the-art methods.</figcaption>
+          </figure>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track-vg,
+.carousel-track-vod {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-track-vg img,
+.carousel-track-vod img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+.carousel-button:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.prev-vg, .prev-vod {
+  left: 15px;
+}
+
+.next-vg, .next-vod {
+  right: 15px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  function createInfiniteCarousel(trackSelector, prevSelector, nextSelector) {
+    const track = document.querySelector(trackSelector);
+    const prevButton = document.querySelector(prevSelector);
+    const nextButton = document.querySelector(nextSelector);
+    const originalImages = Array.from(track.children);
+    let currentIndex = 0;
+    let images;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function cloneFirstAndLast() {
+      const firstClone = originalImages[0].cloneNode(true);
+      const lastClone = originalImages[originalImages.length - 1].cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, originalImages[0]);
+      images = Array.from(track.children);
+      // Adjust initial position to the first original image
+      currentIndex = 1;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    cloneFirstAndLast();
+
+    prevButton.addEventListener('click', () => {
+      if (currentIndex <= 0) {
+        track.style.transition = 'none';
+        currentIndex = images.length - 2;
+        updateCarousel();
+        track.offsetHeight; // Trigger reflow
+        track.style.transition = 'transform 0.3s ease-in-out';
+      }
+      currentIndex--;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+      if (currentIndex >= images.length - 1) {
+        track.style.transition = 'none';
+        currentIndex = 1;
+        updateCarousel();
+        track.offsetHeight; // Trigger reflow
+        track.style.transition = 'transform 0.3s ease-in-out';
+      }
+      currentIndex++;
+      updateCarousel();
+    });
+  }
+
+  createInfiniteCarousel('.carousel-track-vg', '.prev-vg', '.next-vg');
+  createInfiniteCarousel('.carousel-track-vod', '.prev-vod', '.next-vod');
+});
+</script>
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{zheng2025learningvideos3dworld,
+      title={Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors}, 
+      author={Duo Zheng and Shijia Huang and Yanyang Li and Liwei Wang},
+      year={2025},
+      eprint={2505.24625},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2505.24625}, 
+}</code></pre>
+  </div>
+</section> -->
+
+
+ <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This webpage template is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
