@@ -36,7 +36,21 @@
        ul.condensed { column-count: 2; list-style-position: inside; }
      }
      .flex { display: flex; flex-wrap: wrap; }
+     .flex .break {
+        flex-basis: 100%;
+        height: 0;
+      }
      .flex > span { margin-right: 3em; }
+     .flex2 { display: flex; flex-wrap: wrap; }
+     .flex2 .break {
+        flex-basis: 100%;
+        height: 0;
+      }
+     .flex2 > span { 
+        flex-basis: 25%; 
+        box-sizing: border-box;
+        padding-right: 1em; 
+      }
      .text-muted { color: #636c72; }
      .text-info { color: #5bc0de; }
      .text-danger { color: #dc3545; }
@@ -70,11 +84,12 @@
               <span><a href="mailto:liweiwang@cuhk.edu.hk">Prof. Liwei WANG</a></span>
           </dd>
           <dt>Teaching Assistant</dt>
-          <dd class="flex">
+          <dd class="flex2">
             <span><a href="mailto:syli25@cse.cuhk.edu.hk">Shiyu LI</a></span>
             <span><a href="mailto:jrding25@cse.cuhk.edu.hk">Jianrong DING</a></span>
             <span><a href="mailto:ylli25@cse.cuhk.edu.hk">Yilin LI</a></span>
             <span><a href="mailto:yfli24@cse.cuhk.edu.hk">Yifan LI</a></span>
+            <span class="break"></span>
             <span><a href="mailto:zqlin24@cse.cuhk.edu.hk">Ziqian LIN</a></span>
             <span><a href="mailto:rywang24@cse.cuhk.edu.hk">Ruiyan WANG</a></span>
             <span><a href="mailto:jdxu@cse.cuhk.edu.hk">Junde XU</a></span>
