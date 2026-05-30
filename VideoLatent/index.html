@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VideoLatent: Video-Language Learning via Latent Self-Forcing">
+  <meta name="keywords" content="VideoLatent">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoLatent</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">VideoLatent: Video-Language Learning via Latent Self-Forcing</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://henryhzy.github.io/">Zi-Yuan Hu</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://openreview.net/profile?id=%7EZicong_Tang2/">Zicong Tang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sega-hsj.github.io//">Shijia Huang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=bojU9LoAAAAJ&hl=en/">Yanyang Li</a><sup>2</sup>,</span><br>
+              <span class="author-block">
+              <a href="https://www.cse.cuhk.edu.hk/lyu/">Michael R. Lyu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://lwwangcse.github.io/">Liwei Wang</a><sup>1,2*</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The Chinese University of Hong Kong</span>&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Weitu AI</span><br>
+            <span class="author-block"><sup>*</sup>Corresponding Author</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/xxxx.xxxx"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/xxxx.xxxx.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/lavi-lab/VideoLatent"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advancements in chain-of-thought (CoT) reasoning have shown promise in enhancing video understanding and reasoning capabilities of multimodal large language models (MLLMs). 
+            However, existing CoT-based MLLMs require labor-intensive CoT annotations and incur substantial training and inference overhead.
+            While visual latent reasoning has emerged as a more efficient alternative, existing methods primarily focus on image tasks and heavily rely on additional supervision signals for visual latent generation (e.g., CoT traces, auxiliary images, or fine-grained annotations), limiting their scalability and transferability to video tasks. 
+          </p>
+          <p>
+          To bridge this gap, we introduce <b>VideoLatent</b>, a novel MLLM equipped with a latent injection module tailored for video understanding and reasoning.
+          Specifically, VideoLatent learns to perform visual latent reasoning using a new latent self-forcing training paradigm, which comprises latent alignment and latent diversity objectives, and relies solely on standard video-question-answer triplets.
+          </p>
+          <p>
+          Extensive experiments across 14 benchmarks demonstrate that our model consistently outperforms existing standard and latent MLLMs on general video understanding and complex video reasoning.
+          Compared with Video-R1, our VideoLatent achieves superior computational efficiency, reducing training/inference overhead by &sim;6&times; / &sim;68&times;.
+          Moreover, experiments demonstrate that our method has strong generalizability to different MLLM backbones and different model scales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3 is-centered">Overview</h2>
+                <p align="center">
+                  <img src="static/images/overview.png" width="100%"><br>
+                </p>
+            </div>
+            </div>
+            <p><strong>Figure: Overview of VideoLatent.</strong> Given an input video and a text question, our VideoLatent learns to perform
+visual latent reasoning (see Sec. 3.2) using our proposed latent self-forcing training paradigm (see Sec. 3.3).
+Specifically, we introduce a latent injection module to prevent self-generated latent thoughts from drifting away
+from the video and question context. Furthermore, our latent self-forcing covers both latent alignment and latent
+diversity objectives to enhance video-language learning. Detailed symbol definitions are provided in Sec. 3.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3 is-centered">Performance</h2>
+                <p align="center">
+                  <img src="static/images/radar.png" width="100%"><br>
+                </p>
+            </div>
+            </div>
+            <p><strong>Figure: Effectiveness of VideoLatent.</strong> Our VideoLatent-7B consistently outperforms
+existing standard and latent MLLMs across fourteen
+benchmarks under the same experimental settings (see
+Tab. 1 and Tab. 2 for more details), covering both general
+video understanding and complex video reasoning.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3 is-centered">Overhead</h2>
+                <p align="center">
+                  <img src="static/images/overhead.png" width="100%"><br>
+                </p>
+            </div>
+            </div>
+            <p><strong>Figure: Efficiency of VideoLatent.</strong> Our VideoLatent achieves stronger or comparable performance with existing CoT-based MLLMs,
+while achieving superior computational efficiency.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3 is-centered">Experimental Results</h2>
+              <p align="left"><strong>Key findings.</strong> To ensure a comprehensive evaluation, we conduct experiments on fourteen video-language benchmarks, covering both general video understanding and complex video reasoning.
+Our experiments yield several <b>key findings</b>: 
+<br> (1) VideoLatent consistently outperforms both standard and latent MLLMs across diverse benchmarks and experimental settings, demonstrating the <b>effectiveness</b> of our proposed method;
+<br> (2) Our method exhibits strong <b>generalizability</b> to different MLLM backbones and different model sizes;
+<br> (3) Our VideoLatent achieves superior computational <b>efficiency</b> compared with CoT-based MLLMs;
+<br> (4) Visualization and ablation studies further demonstrate the effectiveness of our design.</p><br>
+
+                <p align="center">
+                  <img src="static/images/1.png" width="100%"><br>
+                </p><br><br>
+                <p align="center">
+                  <img src="static/images/2.png" width="100%"><br>
+                </p><br><br>
+                <p align="center">
+                  <img src="static/images/3.png" width="100%"><br>
+                </p><br><br>
+                <p align="center">
+                  <img src="static/images/4.png" width="100%"><br>
+                </p><br><br>
+                <p align="center">
+                  <img src="static/images/5.png" width="100%"><br>
+                </p>
+                <!-- <p align="center">
+                  <img src="static/images/6.png" width="100%"><br>
+                </p> -->
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <div class="columns is-centered has-text-centered">
+            <div class="column">
+                <h2 class="title is-3 is-centered">Examples</h2>
+                <p align="center">
+                  <img src="static/images/appendix_visualization1.png" width="100%"><br>
+                </p><br><br>
+                <p align="center">
+                  <img src="static/images/appendix_visualization2.png" width="100%"><br>
+                </p><br><br>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Reference</h2>
+    <p>
+      If you find VideoLatent useful for your research, please consider giving this repository a star and citing our paper as follows:
+    </p>
+    <pre><code>@article{hu2026videolatent,
+  title     = {VideoLatent: Video-Language Learning via Latent Self-Forcing},
+  author    = {Zi-Yuan Hu and Zicong Tang and Shijia Huang and Yanyang Li and Michael R. Lyu and Liwei Wang},
+  journal   = {arXiv preprint arXiv:2510.20579},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer" align="right">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="mailto:zyhu22@cse.cuhk.edu.hk" class="external-link" disabled>
+        <i class="far fa-envelope"></i>
+      </a>
+      <a class="icon-link"
+         href="https://arxiv.org/abs/xxxx.xxxx">
+        <i class="ai ai-arxiv"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/lavi-lab/VideoLatent" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=n&d=SftdUw0IIU8T8Oad3bxIjrAAcTh090tCwbe-ATHgq1A'></script>
+    
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Webpage template borrowed from <a href="https://nerfies.github.io/">Nerfies</a> :)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
