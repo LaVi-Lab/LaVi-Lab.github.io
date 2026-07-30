@@ -17,7 +17,7 @@
      <link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
      
      <!-- Custom CSS-->
-     <link href="css/general.css?v=20260730-4" rel="stylesheet">
+     <link href="css/general.css?v=20260730-7" rel="stylesheet">
      
       <!-- Owl-Carousel -->
      <link href="./css/custom.css" rel="stylesheet">
@@ -85,6 +85,9 @@
                  padding-right: 0;
              }
 
+         }
+
+         @media (min-width: 768px) {
              .navbar-default .navbar-nav > li:last-child > a {
                  padding-right: 0;
              }
@@ -103,28 +106,15 @@
              line-height: 1.75;
          }
 
+         .content-section-a .lead:last-child {
+             margin-bottom: 0;
+         }
+
          .content-section-a {
              padding: 64px 0;
          }
 
-         #scope {
-             --scope-section-gap: 56px;
-             padding-top: var(--scope-section-gap);
-         }
-
-         #scope > .container > .row + .row {
-             margin-top: var(--scope-section-gap);
-         }
-
-         #scope .section-heading {
-             margin-top: 0;
-         }
-
-         #scope .lead {
-             margin-bottom: 0;
-         }
-
-         #location {
+#location {
              padding-bottom: 64px;
          }
 
@@ -234,6 +224,7 @@
                  margin: 0;
                  align-items: center;
                  justify-content: center;
+                 flex-wrap: wrap;
              }
 
              .navbar-nav > li {
@@ -255,16 +246,7 @@
                  padding: 48px 0;
              }
 
-             #scope {
-                 --scope-section-gap: 44px;
-                 padding-top: var(--scope-section-gap);
-             }
-
-             #scope > .container > .row + .row {
-                 margin-top: var(--scope-section-gap);
-             }
-
-             .content-section-a > .container > .row {
+.content-section-a > .container > .row {
                  margin-right: 0;
                  margin-left: 0;
              }
@@ -331,7 +313,7 @@
      <!-- FullScreen -->
      <div class="intro-header">
          <div class="col-xs-12 text-center abcen1">
-             <div style="background-color: rgba(0,0,0,0.5)">                
+             <div style="background-color: rgba(0,0,0,0.3)">                
                 <h1 class="h1_home wow fadeIn" data-wow-delay="0.4s" style="text-shadow: 0 0 8px #000000;"> Multi-Modal and World Model Symposium 2026</h1>
                 <br>
                 <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s" style="text-shadow: 0px 8px 4px black, 0 0 25px black">
@@ -369,7 +351,9 @@
                      <!-- <li class="menuItem"><a href="#speakers">Speakers</a></li>	 -->
                      <li class="menuItem"><a href="#organizers">Organizer</a></li>	
                      <li class="menuItem"><a href="#location">Location</a></li>
-                     <!-- <li class="menuItem"><a href="#contacts">Contact</a></li> -->
+                     <li class="registration-item"><a href="https://luma.com/x6q9w2hi" target="_blank" rel="noopener noreferrer">Registration</a></li>
+                     <!-- <li class="menuItem"><a href="#contacts">Contact</a></li> -->
+
                  </ul>
              </div>
             
@@ -396,7 +380,13 @@ Join us at CUHK to gain insights from world-class researchers and engage with th
                  </div>   
              </div>
 
-                     <div class="row">
+         </div>
+     </div>
+
+     <!-- Abstract -->
+     <div id="abstract" class="content-section-a">
+         <div class="container">
+             <div class="row">
              
                  <div class="wow fadeInRightBig" data-animation-delay="200"> 
                      <h3 class="section-heading">Abstract</h3>

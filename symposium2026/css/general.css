@@ -277,7 +277,7 @@ color: #ECEBEB;
 	color: #f8f8f8;
 	font-family: Georgia,Times,serif;
 	font-size: .6875em;
-	background: rgba(0, 0, 0, 0.65);
+	background: rgba(0, 0, 0, 0.2);
 	text-align: right;
 	z-index: 5;
 	opacity: 1;
@@ -331,24 +331,6 @@ color: #ECEBEB;
 	background-color: #f8f8f8;
 	padding: 90px 0; 
 }
-
-#scope {
-	--scope-section-gap: 50px;
-	padding-top: var(--scope-section-gap);
-}
-
-#scope > .container > .row + .row {
-	margin-top: var(--scope-section-gap);
-}
-
-#scope .section-heading {
-	margin-top: 0;
-}
-
-#scope .lead {
-	margin-bottom: 0;
-}
-
 
 .content-section-b {
 	border-top: 1px solid #e7e7e7;
