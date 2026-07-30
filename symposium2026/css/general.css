@@ -247,13 +247,24 @@ color: #ECEBEB;
 }
 
 .intro-header {
-	height: 100%; /* Full PAge */
-	padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+	position: relative;
+	height: 100%; /* Full page on small screens */
+	padding-top: 50px;
 	padding-bottom: 50px;
 	color: #f8f8f8;
-	background: url(https://upload.wikimedia.org/wikipedia/commons/5/5f/Pavilion_of_Harmony_201607.jpg) no-repeat center center;
+	background: url(../img/banner-campus-crop.jpg) no-repeat center center;
 	background-size: cover;
 	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.intro-header {
+		height: clamp(380px, 30.69vw, 620px);
+		padding-top: 0;
+		padding-bottom: 0;
+		background-color: #1a1a1a;
+		background-size: contain;
+	}
 }
 
 .intro-caption {
@@ -319,6 +330,24 @@ color: #ECEBEB;
 	background-color: #f8f8f8;
 	padding: 90px 0; 
 }
+
+#scope {
+	--scope-section-gap: 50px;
+	padding-top: var(--scope-section-gap);
+}
+
+#scope > .container > .row + .row {
+	margin-top: var(--scope-section-gap);
+}
+
+#scope .section-heading {
+	margin-top: 0;
+}
+
+#scope .lead {
+	margin-bottom: 0;
+}
+
 
 .content-section-b {
 	border-top: 1px solid #e7e7e7;
