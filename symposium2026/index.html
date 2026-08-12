@@ -155,6 +155,26 @@
              vertical-align: middle !important;
          }
 
+         .speaker-entry {
+             display: flex;
+             align-items: center;
+             gap: 16px;
+         }
+
+         .speaker-photo {
+             width: 68px;
+             height: 68px;
+             flex: 0 0 68px;
+             border-radius: 50%;
+             object-fit: cover;
+         }
+
+         .speaker-photo-placeholder {
+             display: block;
+             background-color: #e7ebee;
+             border: 1px solid #d4dadd;
+         }
+
          #location img,
          #location iframe {
              max-width: 100% !important;
@@ -492,19 +512,39 @@ For this symposium, we have invited academic experts from various research direc
                     </tr>
                     <tr>
                         <td class="schedule-time">9:15 - 10:00</td>
-                        <td>David Forsyth (University of Illinois Urbana-Champaign), Keynote Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <img class="speaker-photo" src="img/speaker/1.jpeg" alt="David Forsyth">
+                                <span>David Forsyth (University of Illinois Urbana-Champaign), Keynote Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">10:05 - 10:35</td>
-                        <td>Jiajun Wu (Stanford University), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Jiajun Wu (Stanford University), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">10:40 - 11:10</td>
-                        <td>Xiaojuan Qi (The University of Hong Kong)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Xiaojuan Qi (The University of Hong Kong)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">11:15 - 11:45</td>
-                        <td>Manling Li (Northwestern University), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Manling Li (Northwestern University), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -516,27 +556,57 @@ For this symposium, we have invited academic experts from various research direc
                     </tr>
                     <tr>
                         <td class="schedule-time">14:00 - 14:45</td>
-                        <td>Xiaoming Liu (The University of North Carolina at Chapel Hill), Keynote Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Xiaoming Liu (The University of North Carolina at Chapel Hill), Keynote Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">14:50 - 15:20</td>
-                        <td>Alex Schwing (University of Illinois Urbana-Champaign)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Alex Schwing (University of Illinois Urbana-Champaign)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">15:25 - 15:55</td>
-                        <td>Jiajun Zhang (University of Chinese Academy of Sciences), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Jiajun Zhang (University of Chinese Academy of Sciences), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">16:00 - 16:30</td>
-                        <td>Xinggang Wang (Huazhong University of Science and Technology)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Xinggang Wang (Huazhong University of Science and Technology)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">16:35 - 17:05</td>
-                        <td>David Wipf (The University of Hong Kong)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>David Wipf (The University of Hong Kong)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">17:10 - 18:00</td>
-                        <td>Liwei Wang (The Chinese University of Hong Kong)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Liwei Wang (The Chinese University of Hong Kong)</span>
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -548,23 +618,48 @@ For this symposium, we have invited academic experts from various research direc
                     </tr>
                     <tr>
                         <td class="schedule-time">9:00 - 9:45</td>
-                        <td>Mohit Bansal (The University of North Carolina at Chapel Hill), Keynote Talk, Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Mohit Bansal (The University of North Carolina at Chapel Hill), Keynote Talk, Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">9:50 - 10:20</td>
-                        <td>Mengye Ren (New York University), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Mengye Ren (New York University), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">10:25 - 10:55</td>
-                        <td>Bolei Zhou (University of California Los Angeles), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Bolei Zhou (University of California Los Angeles), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">11:00 - 11:30</td>
-                        <td>Huaizu Jiang (Northeastern University), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Huaizu Jiang (Northeastern University), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">11:35 - 12:05</td>
-                        <td>Qifeng Chen (The Hong Kong University of Science and Technology)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Qifeng Chen (The Hong Kong University of Science and Technology)</span>
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -576,23 +671,48 @@ For this symposium, we have invited academic experts from various research direc
                     </tr>
                     <tr>
                         <td class="schedule-time">14:00 - 14:45</td>
-                        <td>Zhuowen Tu (University of California San Diego), Keynote Talk, Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Zhuowen Tu (University of California San Diego), Keynote Talk, Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">14:50 - 15:20</td>
-                        <td>Qi Dou (The Chinese University of Hong Kong)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Qi Dou (The Chinese University of Hong Kong)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">15:25 - 15:55</td>
-                        <td>Fei Miao (Zhejiang University), Online Talk</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Fei Miao (Zhejiang University), Online Talk</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">16:00 - 16:30</td>
-                        <td>Ping Luo (The University of Hong Kong)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Ping Luo (The University of Hong Kong)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">16:35 - 17:05</td>
-                        <td>Long Chen (The Hong Kong University of Science and Technology)</td>
+                        <td>
+                            <div class="speaker-entry">
+                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <span>Long Chen (The Hong Kong University of Science and Technology)</span>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td class="schedule-time">17:10 - 17:30</td>
