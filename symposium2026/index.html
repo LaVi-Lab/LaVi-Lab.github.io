@@ -169,10 +169,15 @@
              object-fit: cover;
          }
 
-         .speaker-photo-placeholder {
-             display: block;
-             background-color: #e7ebee;
-             border: 1px solid #d4dadd;
+         .organizer-entry {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             gap: 16px;
+         }
+
+         .organizer-entry .lead {
+             margin: 0;
          }
 
          #location img,
@@ -425,11 +430,11 @@
  
              <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                  <ul class="nav navbar-nav">
-                     
+
                      <li class="menuItem"><a href="#scope">Introduction</a></li>
                      <li class="menuItem"><a href="#program">Program</a></li>
                      <!-- <li class="menuItem"><a href="#speakers">Speakers</a></li>	 -->
-                     <li class="menuItem"><a href="#organizers">Organizer</a></li>	
+                     <li class="menuItem"><a href="#organizers">Organizer</a></li>
                      <li class="menuItem"><a href="#location">Location</a></li>
                      <li class="registration-item"><a href="https://luma.com/x6q9w2hi" target="_blank" rel="noopener noreferrer">Registration</a></li>
                      <!-- <li class="menuItem"><a href="#contacts">Contact</a></li> -->
@@ -523,7 +528,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">10:05 - 10:35</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/2.jpg" alt="Jiajun Wu">
                                 <span>Jiajun Wu (Stanford University), Online Talk</span>
                             </div>
                         </td>
@@ -532,7 +537,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">10:40 - 11:10</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/3.jpg" alt="Xiaojuan Qi">
                                 <span>Xiaojuan Qi (The University of Hong Kong)</span>
                             </div>
                         </td>
@@ -541,7 +546,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">11:15 - 11:45</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/4.jpg" alt="Manling Li">
                                 <span>Manling Li (Northwestern University), Online Talk</span>
                             </div>
                         </td>
@@ -558,7 +563,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">14:00 - 14:45</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/5.avif" alt="Xiaoming Liu">
                                 <span>Xiaoming Liu (The University of North Carolina at Chapel Hill), Keynote Talk</span>
                             </div>
                         </td>
@@ -567,7 +572,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">14:50 - 15:20</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/6.png" alt="Alex Schwing">
                                 <span>Alex Schwing (University of Illinois Urbana-Champaign)</span>
                             </div>
                         </td>
@@ -576,7 +581,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">15:25 - 15:55</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/7.jpg" alt="Jiajun Zhang">
                                 <span>Jiajun Zhang (University of Chinese Academy of Sciences), Online Talk</span>
                             </div>
                         </td>
@@ -585,7 +590,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">16:00 - 16:30</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/8.png" alt="Xinggang Wang">
                                 <span>Xinggang Wang (Huazhong University of Science and Technology)</span>
                             </div>
                         </td>
@@ -594,7 +599,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">16:35 - 17:05</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/9.jpg" alt="David Wipf">
                                 <span>David Wipf (The University of Hong Kong)</span>
                             </div>
                         </td>
@@ -603,7 +608,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">17:10 - 18:00</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/10.png" alt="Liwei Wang">
                                 <span>Liwei Wang (The Chinese University of Hong Kong)</span>
                             </div>
                         </td>
@@ -620,7 +625,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">9:00 - 9:45</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/11.png" alt="Mohit Bansal">
                                 <span>Mohit Bansal (The University of North Carolina at Chapel Hill), Keynote Talk, Online Talk</span>
                             </div>
                         </td>
@@ -629,7 +634,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">9:50 - 10:20</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/12.jpg" alt="Mengye Ren">
                                 <span>Mengye Ren (New York University), Online Talk</span>
                             </div>
                         </td>
@@ -638,7 +643,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">10:25 - 10:55</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/13.jpg" alt="Bolei Zhou">
                                 <span>Bolei Zhou (University of California Los Angeles), Online Talk</span>
                             </div>
                         </td>
@@ -647,7 +652,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">11:00 - 11:30</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/14.webp" alt="Huaizu Jiang">
                                 <span>Huaizu Jiang (Northeastern University), Online Talk</span>
                             </div>
                         </td>
@@ -656,7 +661,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">11:35 - 12:05</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/15.jpg" alt="Qifeng Chen">
                                 <span>Qifeng Chen (The Hong Kong University of Science and Technology)</span>
                             </div>
                         </td>
@@ -673,7 +678,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">14:00 - 14:45</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/16.jpg" alt="Zhuowen Tu">
                                 <span>Zhuowen Tu (University of California San Diego), Keynote Talk, Online Talk</span>
                             </div>
                         </td>
@@ -682,7 +687,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">14:50 - 15:20</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/17.jpg" alt="Qi Dou">
                                 <span>Qi Dou (The Chinese University of Hong Kong)</span>
                             </div>
                         </td>
@@ -691,7 +696,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">15:25 - 15:55</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/18.jpeg" alt="Fei Miao">
                                 <span>Fei Miao (Zhejiang University), Online Talk</span>
                             </div>
                         </td>
@@ -700,7 +705,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">16:00 - 16:30</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/19.jpg" alt="Ping Luo">
                                 <span>Ping Luo (The University of Hong Kong)</span>
                             </div>
                         </td>
@@ -709,7 +714,7 @@ For this symposium, we have invited academic experts from various research direc
                         <td class="schedule-time">16:35 - 17:05</td>
                         <td>
                             <div class="speaker-entry">
-                                <span class="speaker-photo speaker-photo-placeholder" aria-hidden="true"></span>
+                                <img class="speaker-photo" src="img/speaker/20.webp" alt="Long Chen">
                                 <span>Long Chen (The Hong Kong University of Science and Technology)</span>
                             </div>
                         </td>
@@ -725,24 +730,21 @@ For this symposium, we have invited academic experts from various research direc
     </div>
 
      <!-- Organizers -->
-     <div id="organizers" class="content-section-a"> 
-         
+     <div id="organizers" class="content-section-a">
          <div class="container">
-                 <div class="row wow fadeInRightBig"  data-animation-delay="200">
+             <div class="row wow fadeInRightBig" data-animation-delay="200">
                  <h3 class="section-heading">Organizer</h3>
-                 
-                 <!-- <p class="lead" style="text-align: center;">
-                    <a href="https://lwwangcse.github.io/">CUHK CSE Language and Vision Lab (LaVi Lab)</a>
-                </p> -->
-                <p class="lead" style="text-align: center;">
-                    <a href="https://lwwangcse.github.io/">Liwei Wang, LaVi Lab, Computer Science and Engineering Department at CUHK. </a>
-                </p>
-                 </div> 
- 
+                 <div class="organizer-entry">
+                     <img class="speaker-photo" src="img/speaker/10.png" alt="Liwei Wang">
+                     <p class="lead">
+                         <a href="https://lwwangcse.github.io/">Liwei Wang, LaVi Lab, Computer Science and Engineering Department at CUHK.</a>
+                     </p>
+                 </div>
              </div>
          </div>
- 
-     <div id="location" class="content-section-a"> 
+     </div>
+
+     <div id="location" class="content-section-a">
          
         <div class="container">
                 <div class="row wow fadeInRightBig"  data-animation-delay="200">
